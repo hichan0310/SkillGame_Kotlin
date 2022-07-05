@@ -70,8 +70,8 @@ open class Player(var name:String, var statement:Statement, var die:Boolean) {
 
 
 
-class Person(var _name:String, var inventory:ArrayList<Equipment?>):Player(_name, Statement(500, 10, 40, 20, 100)) {
-    constructor(name: String) : this(name, arrayListOf<Equipment?>(null, null, null, null, null)) {}     //[0]=무기, [1]=갑옷, [2]=신발, [3]=투구, [4]=증폭기(보석)
+class Person(var _name:String, var inventory:ArrayList<Equipment?>, var ingredient:ArrayList<Ingredient>):Player(_name, Statement(500, 10, 40, 20, 100)) {
+    constructor(name: String) : this(name, arrayListOf<Equipment?>(null, null, null, null, null), ArrayList<Ingredient>()) {}     //[0]=무기, [1]=갑옷, [2]=신발, [3]=투구, [4]=증폭기(보석)
 
     override fun addEquipment(equipment: Equipment){
         if(inventory[equipment.type]!=null)
